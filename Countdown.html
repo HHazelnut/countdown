@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Coundown to NYE</title>
+        meta name="viewport" content="width=device=device-width, intial-scale=1">
+        <style>
+        p { 
+            text-align: center;
+            font-size: 60px;
+            margin-top: 0px;
+            }
+        </style>
+    </head>
+<body>
+<p id="time"></p>
+    
+<script>
+// Sets the date
+var countDownDate = new Date("Dec 31, 2027 23:59:59").getTime();
+    
+  // Updates the timer
+    var x = setInterval(function() {
+        //Gets the date for heute.
+        var now = new Date().getTime();
+        //Time between tthe set date and the now --- subtracted
+        var distance = countDownDate - now;
+        var days = Math.floor(distance / (1000 * 60 * 60 * 60 * 24));
+        var hours = Math.floor(distance / (1000 * 60 * 60 * 60)) / (1000 * 60 * 60);
+        var minutes = Math.floor(distance / (1000 * 60 * 60)) / (1000 * 60);
+        var seconds = Math.floor(distance / (1000 * 60)) / 1000);
+        
+        document.getElementById("time").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds "s ";
+        
+    if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("time.innerHTML")("HAPPY NYE OF YOUR SR year!");
+    }
+}, 1000);
+    </script>
+    </body>
+</html>
